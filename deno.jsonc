@@ -1,0 +1,29 @@
+{
+  "name": "@warashi/denovo-core",
+  "version": "0.1.0",
+  "exports": {
+    ".": "./mod.ts",
+    "./type": "./type.ts",
+    "./error": "./error.ts"
+  },
+  "publish": {
+    "include": [
+      "**/*.ts",
+      "README.md",
+      "LICENSE"
+    ],
+    "exclude": [
+      "**/*_test.ts",
+      ".*"
+    ]
+  },
+  "tasks": {
+    "check": "deno check **/*.ts",
+    "test": "deno test -A --parallel --shuffle --doc",
+    "test:coverage": "deno task test --coverage=.coverage",
+    "coverage": "deno coverage .coverage"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1.0.1"
+  }
+}
